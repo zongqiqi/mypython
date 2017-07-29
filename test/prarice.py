@@ -73,6 +73,6 @@
 # my_new_car.read_odometer()
 
 
-with open("asd.txt",'r',encoding='utf8') as f:
+with open("asd.txt",'r',encoding='utf-8') as f:
 	contens=f.read()
-	print(contens)
+print(contens)
