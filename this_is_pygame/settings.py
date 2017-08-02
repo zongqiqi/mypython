@@ -15,5 +15,7 @@ class Settings(object):
 		self.bullet_width=3#子弹宽3像素
 		self.bullet_height=15#子弹高15像素
 		self.bullet_color=60,60,60
-		self.bullets_allowed=3
+		self.bullets_allowed=10000
+
+		self.fire=False
 

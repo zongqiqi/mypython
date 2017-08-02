@@ -15,6 +15,11 @@ def check_keydown_events(event,ai_settings,screen,ship,bullets):
 		if len(bullets)<ai_settings.bullets_allowed:
 			new_bullet=Bullte(ai_settings,screen,ship)
 			bullets.add(new_bullet)
+	elif event.key==pygame.K_q:
+		sys.exit()
+
+		
+
 
 def check_keyup_events(event,ship):
 	"""按键响应松开"""
@@ -44,13 +49,30 @@ def check_events(ai_settings,screen,ship,bullets):
 			check_keyup_events(event,ship)
 
 
-def update_screen(ai_settings,screen,ship,bullets):
+def update_screen(ai_settings,screen,ship,alien,bullets):
 	"""更新屏幕上的图像，并切换到新的屏幕"""
 	#每次循环都重绘屏幕
 	screen.fill(ai_settings.bg_color)
 	for bullet in bullets.sprites():
 		bullet.draw_bullet()
 	ship.blitme()
+	alien.blitme()
+
 
 	#让最近的绘制屏幕可见
 	pygame.display.flip()
+
+def update_bullets(bullets,ai_settings,screen):
+	"""更新子弹位置，并删除已消失的子弹"""
+	#更新子弹位置
+	bullets.update()
+
+	#删除已消失的子弹
+	for bullet in bullets.copy():
+		if bullet.rect.bottom<=0:
+			bullets.remove(bullet)
+
+	if ai_settings.fire:
+		new_bullet=Bullte(ai_settings,screen,ship)
+		bullets.add(new_bullet)
+
