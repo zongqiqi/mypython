@@ -23,4 +23,9 @@ class Alien(Sprite):
 
 	def blitme(self):
 		self.screen.blit(self.image,self.rect)
-		
+
+	def update(self):
+		"""向右移动外星人"""
+		self.x+=self.ai_settings.alien_speed_factor
+		self.rect.x=self.x
+			
