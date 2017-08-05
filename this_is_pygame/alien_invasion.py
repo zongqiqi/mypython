@@ -41,8 +41,8 @@ def run_game():
 		# pygame.display.flip()
 		gf.check_events(ai_settings,screen,ship,bullets)#pygame事件捕捉
 		ship.update()
-		gf.update_bullets(aliens,bullets)
-		gf.update_aliens(ai_settings,aliens)
+		gf.update_bullets(ai_settings,screen,ship,aliens,bullets)
+		gf.update_aliens(ai_settings,ship,aliens)
 		gf.update_screen(ai_settings,screen,ship,aliens,bullets)#更新屏幕
 		# bullets.update()
 

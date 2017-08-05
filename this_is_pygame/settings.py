@@ -12,7 +12,7 @@ class Settings(object):
 
 		#子弹设置
 		self.bullet_speed_factor=1#子弹移动速度
-		self.bullet_width=10#子弹宽3像素
+		self.bullet_width=500#子弹宽3像素
 		self.bullet_height=15#子弹高15像素
 		self.bullet_color=60,60,60
 		self.bullets_allowed=10000
