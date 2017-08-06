@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt#导入模块
 
 input_values=[1,2,3,4,5]
 squares=[1,4,9,16,25]#数据
-# plt.plot(squares)#绘制图像
+# plt.plot(squares)#绘制图像=================================
 # plt.plot(squares,linewidth=5)#设置绘制线条的粗细
 plt.plot(input_values,squares,linewidth=5)
 
