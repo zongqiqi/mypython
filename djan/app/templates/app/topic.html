@@ -5,6 +5,9 @@
 	<p>Topic : {{ topic }}</p>
 
 	<p>Entries : </p>
+	<p>
+		<a href="{% url 'app:new_entry' topic.id %}">add new entry</a>
+	</p>
 	<ul>
 		{% for entry in entries %}
 		<li>
@@ -17,5 +20,7 @@
 		</li>
 		{% endfor %}
 	</ul>
+
+	<a href="{% url 'app:new_topic' %}">Add a new topic</a>
 
 {% endblock content %}
