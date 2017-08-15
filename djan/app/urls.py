@@ -22,4 +22,9 @@ urlpatterns=[
 
 	#用于添加新条目的页面
 	url(r'^new_entry/(?P<topic_id>\d+)/$',views.new_entry,name='new_entry'),
+
+	#用于编辑条目的页面
+	url(r'^edit_entry/(?P<entry_id>\d+)/$',views.edit_entry,name='edit_entry'),
+
+	#
 ]
