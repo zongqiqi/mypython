@@ -18,7 +18,9 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-
+    url(r'^users/',include('users.urls',namespace='users')),
     #建立子级urls映射关系
     url(r'',include('app.urls',namespace='app')),
+
+
 ]
