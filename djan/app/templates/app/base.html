@@ -1,8 +1,8 @@
-<p>
+<!-- <p>
 	<a href="{% url 'app:index' %}">Learning Log</a> -
 	<a href="{% url 'app:topics' %}">Topics</a>
 
-		{% if user.is_authenticated %}
+		#{% if user.is_authenticated %}
 			Hello,{{ user.username}}
 			<a href="{% url 'users:logout' %}">log out</a>
 		{% else %}
@@ -11,4 +11,65 @@
 		{% endif  %}
 </p>
 
-{% block content %}{% endblock content %}
+ -->
+
+{% load bootstrap3 %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<title>Learning Log</title>
+
+	{% bootstrap_css %}
+	{% bootstrap_javascript %}
+
+</head>
+<body>
+	<!-- Static navbar(导航栏) -->
+	<nav class="navbar navbar-default navbar-static-top">
+	<div class="container">
+		
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#bavbar"
+				aria-expanded="false" aria-controls="navbar">
+			</button>
+			<a class="navbar-brand" href="{% url 'app:index' %}">Learning Log</a>
+		</div>
+
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li><a href="{% url 'app:topics' %}">Topics</a></li>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				{% if user.is_authenticated %}
+					<li><a>Hello,{{ user.username }}.</a></li>
+					<li><a href="{% url 'users:logout' %}">logout</a></li>
+				{% else %}
+					<li><a href="{% url 'users:register' %}">register</a></li>
+					<li><a href="{% url 'users:login' %}">login</a></li>
+				{% endif %}
+			</ul>
+		</div><!-- /.nav-collapse -->
+
+	</div>
+		
+	</nav>
+
+
+	<div class="container"><!-- div是网页的一部分，可用于任何目的，并可通过边框、元素周围的空间（外边距）、内容和边框之间的间距（内边距）、背景色和其它样式规则来设置其样式 -->
+		<div class="page-header">
+			{% block header %}{% endblock header %}
+		</div>
+		<div>
+			{% block content %}{% endblock content %}
+		</div>
+	</div>
+
+</body>
+</html>

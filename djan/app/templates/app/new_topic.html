@@ -1,11 +1,29 @@
 {% extends "app/base.html" %}
 
-{% block content %}
+<!--  block content 
 	<p>Add a new topic: </p>
 
 	<form action="{% url 'app:new_topic' %}" method='post'>
 		{% csrf_token %}
 		{{ form.as_p }}
 		<button name="submit">add topic</button>
+	</form>
+endblock content  -->
+
+{% load bootstrap3 %}
+
+{% block header %}
+	<h2>Add a new topic :</h2>
+{% endblock header %}
+
+{% block content %}
+	<form action="{% url 'app:new_topic' %}" method="post" class="form">
+		
+		{% csrf_token %}
+		{% bootstrap_form form %}
+
+		{% buttons %}
+		<button name="submit" class="btn btn-primary">add topic</button>
+		{% endbuttons %}
 	</form>
 {% endblock content %}
