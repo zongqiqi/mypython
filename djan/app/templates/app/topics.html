@@ -23,7 +23,7 @@ endblock -->
         {% for topic in topics %}
             <li>
                 <h3>
-                    <a href="{% url 'app:topic' topic.id %}">{{topic}}</a>
+                    <a href="{% url 'app:topic' topic.id %}">{{topic.text|capfirst}}</a>
                 </h3>
             </li>
         {% empty %}
