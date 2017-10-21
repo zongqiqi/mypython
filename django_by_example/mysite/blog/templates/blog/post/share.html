@@ -1,0 +1,28 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Share a post{% endblock %}
+
+{% block content %}
+	{% if sent %}
+		<h1>E-mail successfully sent</h1>
+		<p>
+			"{{post.title}}" was successfully sent to {{cd}}
+		</p>
+	{% else %}
+		<h1>Share "{{post.title}}" by e-mail</h1>
+		<form action="." method="post">
+			{{form.as_p}}
+			{% csrf_token %}
+			<input type="submit" value="Send e-mail">
+		</form>
+	{% endif %}
+{% endblock %}
+
+<!-- as_p方法利用HTML中的<p>元素来渲染它的字段，也可以使用as_ul
+	利用无序列表来渲染表单或者as_table利用HTML表格来渲染，也可以迭代字段，注意渲染每一个字段 -->
+<!-- 	{% for field in form  %}
+	<div>
+		{{field.errors}}
+		{{field.label_tag}}{{field}}
+	</div>
+	{% endfor %} -->

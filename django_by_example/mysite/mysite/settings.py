@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     #我的app
     'blog',
+    'taggit',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +124,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#email part
+EMAIL_HOST="smtp.qq.com"
+EMAIL_HOST_USER="zongqiqi0522@foxmail.com"
+EMAIL_HOST_PASSWORD="ryvpvvuqenybbbcf"
+EMAIL_PORT=465
+EMAIL_USE_SSL=True
