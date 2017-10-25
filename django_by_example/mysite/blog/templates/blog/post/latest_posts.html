@@ -1,0 +1,9 @@
+
+<!-- 包含标签，返回一个字典变量作为上下文用来模板 -->
+<ul>
+	{% for post in latest_posts %}
+		<li>
+			<a href="{{post.get_absolute_url}}">{{post.title}}</a>
+		</li>
+	{% endfor %}
+</ul>

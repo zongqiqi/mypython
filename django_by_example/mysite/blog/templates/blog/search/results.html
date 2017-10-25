@@ -1,0 +1,19 @@
+{% extends "blog/base.html" %}
+
+
+{% block content %}
+	{% if error_msg %}
+		<p>{{error_msg}}</p>
+	{% endif %}
+
+	{% for post in post_list %}
+		<div>
+			在这里显示具体的符合条件的文章
+		</div>
+	{% empty %}
+		<div class="no-post">
+			没有搜索到符合条件的文章
+		</div>
+	{% endfor %}
+	<h4>The search words is :{{q}}</h4>
+{% endblock %}

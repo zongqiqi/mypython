@@ -1,0 +1,51 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            {% block title %}{%endblock%}
+        </title>
+        <link href="{%static 'css/base.css' %}" rel="stylesheet" type="text/css">
+        </link>
+    </head>
+    <body>
+        <div id="header">
+            <span class="logo">
+                Bookmarks
+            </span>
+            {% if request.user.is_authenticated %}
+            <ul class="menu">
+                <li %}="" %}class="selected" endif="" if="" section="dashboard" {%="">
+                    <a %}"="" dashboard"="" href="{% url ">
+                        My dashboard
+                    </a>
+                </li>
+                <li %}="" %}class="selected" endif="" if="" section="images" {%="">
+                    <a href="#">
+                        Images
+                    </a>
+                </li>
+                <li %}="" %}class="selected" endif="" if="" section="people" {%="">
+                    <a href="#">
+                        People
+                    </a>
+                </li>
+            </ul>
+            {% endif %}
+            <span class="user">
+                {% if request.user.is_authenticated %}
+				Hello {{ request.user.name }},
+                <a href="{% url 'logout' %}">Logout</a>
+                {% else %}
+               <a href="{% url 'login' %}">Log-in</a>
+                {% endif %}
+            </span>
+        </div>
+
+
+        <div id="content">
+            {% block content %}
+		{% endblock %}
+        </div>
+    </body>
+</html>

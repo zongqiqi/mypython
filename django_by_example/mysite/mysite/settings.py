@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+SITE_ID=1
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,6 +41,11 @@ INSTALLED_APPS = [
     #我的app
     'blog',
     'taggit',
+
+    #激活Django应用，安装站点地图sitemap
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
+
 ]
 
 MIDDLEWARE = [

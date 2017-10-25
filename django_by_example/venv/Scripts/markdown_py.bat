@@ -1,0 +1,1 @@
+@"e:\zongqiqi\biandaima\mypython\django_by_example\venv\scripts\python3.exe" "e:\zongqiqi\biandaima\mypython\django_by_example\venv\Scripts\markdown_py" %*

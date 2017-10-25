@@ -21,7 +21,7 @@ def post_list(request,tag_slug=None):
 	#视图带有一个可选的tag_slug参数，默认是一个None值，参数会带进URL中
 	#视图内部构建查询集，取回所有发布状态的帖子，假如给定一个标签slug，
 	#	通过get_objects_or_404()用给定的slug来获取标签对象
-	# 过滤所有的帖子只留下包含给定标签的帖子，
+	# 过滤所有的帖子只留下包含给定标签的帖子.
 
 	paginator=Paginator(object_list,3)
 	page=request.GET.get('page')
@@ -126,3 +126,18 @@ def post_share(request,post_id):
 # 使用get_object_or_404快捷方式通过ID获取对应的帖子，并且确保在published状态
 # 使用同一个视图来展示初始表单和处理提交以后的数据，利用request.POST用来区分
 
+
+
+
+
+def search(request):
+	q=request.GET['search']
+	error_msg=''
+
+	if not q:
+		error_msg='请输入关键词'
+		return render(request,'blog/search/error.html',{'error_msg':error_msg})
+
+	post_list=Post.objects.filter(body__icontains=q)
+	context={'error_msg':error_msg,'post_list':post_list,'q':q}
+	return render(request,'blog/search/results.html',context)
