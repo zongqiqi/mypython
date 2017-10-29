@@ -126,3 +126,8 @@ from django.core.urlresolvers import reverse_lazy
 LOGIN_REDIRECT_URL=reverse_lazy('dashboard')
 LOGIN_URL=reverse_lazy('login')
 LOGOUT_URL=reverse_lazy('logout')
+
+
+# 管理用户上传的多媒体文件
+MEDIA_URL='/media/'#管理用户上传多媒体文件的主URL
+MEDIA_ROOT=os.path.join(BASE_DIR,'/media/')#文件在本地保存的路径

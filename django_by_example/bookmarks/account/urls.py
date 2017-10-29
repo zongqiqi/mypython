@@ -18,7 +18,7 @@ urlpatterns=[
 	#登录
 	url(r'^login/$',login,name='login'),
 	#登出
-	url(r'^logout/$',logout(),name='logout'),
+	url(r'^logout/$',logout,name='logout'),
 	#重新登录
 	url(r'^logout-then-login/$',logout_then_login,name='logout_then_login'),
 
@@ -37,5 +37,11 @@ urlpatterns=[
 	# url(r'^logout/$','django.contrib.auth.views.logout',name='logout'),
 	# url(r'^logout-then-login/$','django.contrib.auth.views.logout_then_login',
 	# 			name='logout_then_login'),
+
+	#注册模块
+	url(r'^register/$',views.register,name='register'),
+
+	url(r'^edit/$',views.edit,name='edit'),
+
 
 ]
