@@ -53,6 +53,12 @@ def register(request):
 		user_form=UserRegistrationForm()
 	return render(request,'account/register.html',{'user_form':user_form})
 
+
+def password_change_done1(request):
+	return render(request,'account/regrstration/password_change_done.html',)
+
+
+
 @login_required
 def edit(request):
 	if request.method=="POST":
@@ -65,6 +71,6 @@ def edit(request):
 			profile_form.save()
 	else:
 		user_form=UserEditForm(instance=request.user)
-		profile_form=ProfileEditForm(intsance=request.user.profile)
+		profile_form=ProfileEditForm(instance=request.user.profile)
 	return render(request,'account/edit.html',
 			{'user_form':user_form,'profile_form':profile_form})

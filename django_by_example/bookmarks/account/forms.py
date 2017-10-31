@@ -34,7 +34,7 @@ class UserEditForm(forms.ModelForm):
     """
     class Meta:
         model=User
-        fieds=('first_name','last_name','email')
+        fields=('first_name','last_name','email')
 
 class ProfileEditForm(forms.ModelForm):
     """
