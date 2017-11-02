@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '9_dlsz745mf=u$&znz9bhkofpm&u59m_awio#rp-xbil^5nuq('
+SECRET_KEY = 'qo6dz@lmvqueo-u-lw6k9ulduypik)+59gzr=n3+p_d0^b)aik'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    #my app
+    # my app
     'account',
 ]
 
@@ -121,13 +121,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-
-from django.core.urlresolvers import reverse_lazy
-LOGIN_REDIRECT_URL=reverse_lazy('dashboard')
-LOGIN_URL=reverse_lazy('login')
-LOGOUT_URL=reverse_lazy('logout')
-
-
-# 管理用户上传的多媒体文件
-MEDIA_URL='/media/'#管理用户上传多媒体文件的主URL
-MEDIA_ROOT=os.path.join(BASE_DIR,'/media/')#文件在本地保存的路径
