@@ -8,7 +8,8 @@ from . import views
 urlpatterns=[
 	# url(r'^login/$',views.user_login,name='login'),
 	url(r'^login/$', auth_views.login,{'template_name': 'registration/login.html'},name='login'),
-	url(r'^logout/$', auth_views.logout, name='logout'),
+	url(r'^logout/$', auth_views.logout,{'template_name': 'registration/logged_out.html'}, name='logout'),
+	# url(r'^logout/$', views.logoutt, name='logout'),
 	url(r'^logout-then-login/$', auth_views.logout_then_login, name='logout_then_login'),
 	# change password
 	url(r'^password-change/$', auth_views.password_change, name='password_change'),
@@ -21,4 +22,6 @@ urlpatterns=[
 				auth_views.password_reset_confirm,name='password_reset_confirm'),
 	url(r'^password-reset/complete/$',auth_views.password_reset_complete,
 						name='password_reset_complete'),
+
+	url(r'^$',views.dashboard,name='dashboard'),
 ]

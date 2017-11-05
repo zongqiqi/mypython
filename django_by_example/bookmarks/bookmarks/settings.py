@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -31,7 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+    # 'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -40,6 +41,9 @@ INSTALLED_APPS = [
 
     # my app
     'account',
+
+
+    'django.contrib.admin',#每个模板被定位在相同的相对路径时，Django模板读取器将会使用它找到第一个模板应用
 ]
 
 MIDDLEWARE = [
@@ -121,3 +125,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+from django.core.urlresolvers import reverse_lazy
+LOGIN_REDIRECT_URL=reverse_lazy('dashboard')#用户登录成功后咩有获取到‘next’后会被默认重定向到的地址
+LOGIN_URL=reverse_lazy('login')#重定向用户登录的地址
+LOGIN_URL=reverse_lazy('logout')#重定向登出的地址
+
+# LOGOUT_REDIRECT_URL=reverse_lazy('login')#next_page: The URL to redirect to 
+##after logout. Defaults to settings.LOGOUT_REDIRECT_URL if not supplied.
