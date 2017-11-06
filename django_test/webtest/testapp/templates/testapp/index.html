@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<title>Hello word</title>
+	<link href="{% static 'css/default.css' %}" rel="stylesheet" type="text/css"><!-- 基本网页css设置 -->
+
+	<script type="text/javascript" src="{% static 'js/jquery.lightbox.min.js' %}"></script><!-- 导入lightbox和js -->
+	<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+</head>
+<body>
+	<h1>Hello !</h1>
+	<div class="frame">
+		<div class="frame_1">
+			<div class="frame_1_1">
+				
+				<div class="min">
+					 <a href="{% static 'pic/big/0.jpg' %}" rel="group1" target="_blank">
+                            <img src="{% static 'pic/big/0.jpg' %}"/>
+                        </a>
+				</div>
+				<div class="max">
+					
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

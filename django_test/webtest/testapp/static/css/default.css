@@ -1,0 +1,192 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    background: #ffe;
+/*    background: #FE8BAC;*/
+    font-size: 12px;
+    overflow: auto
+}
+
+#mainDiv {
+    width: 100%;
+    height: 100%
+}
+
+#loveHeart {
+    float: left;
+    width: 670px;
+    height: 625px
+}
+
+#garden {
+    width: 100%;
+    height: 100%
+}
+
+#elapseClock {
+    text-align: right;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+#words {
+    font-family: "sans-serif";
+    width: 500px;
+    font-size: 24px;
+    color: #666
+}
+
+#messages {
+    display: none
+}
+
+#elapseClock .digit {
+    font-family: "digit";
+    font-size: 36px
+}
+
+#loveu {
+    padding: 5px;
+    font-size: 22px;
+    margin-top: 80px;
+    margin-right: 120px;
+    text-align: right;
+    display: none
+}
+
+#loveu .signature {
+    margin-top: 10px;
+    font-size: 20px;
+    font-style: italic
+}
+
+#clickSound {
+    display: none
+}
+
+#code {
+    float: left;
+    width: 440px;
+    height: 400px;
+    color: #333;
+    font-family: "Consolas", "Monaco", "Bitstream Vera Sans Mono", "Courier New", "sans-serif";
+    font-size: 12px
+}
+
+#code .string {
+    color: #2a36ff
+}
+
+#code .keyword {
+    color: #7f0055;
+    font-weight: bold
+}
+
+#code .placeholder {
+    margin-left: 15px
+}
+
+#code .space {
+    margin-left: 7px
+}
+
+#code .comments {
+    color: #3f7f5f
+}
+
+#copyright {
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+    color: #666
+}
+
+#errorMsg {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    position: absolute;
+    top: 100px;
+    left: 0
+}
+
+#copyright a {
+    color: #666
+}
+
+.frame img {
+    cursor: pointer;
+    border: 0px;
+    opacity: 0.8;
+    filter(alpha=80)
+}
+
+.frame img:hover {
+    border: 1px #ffffff solid;
+    opacity: 1;
+    filter(alpha=100)
+}
+
+.frame {
+    width: 100%;
+    height: 820px;
+    background-color: #FE8BAC
+}
+
+.frame .frame_1 {
+    width: 1104px;
+    height: 678px;
+    margin: 0px auto;
+    padding-top: 100px;
+}
+
+.frame .frame_1 .frame_1_1 {
+    width: 1104px;
+    height: 161px;
+    margin-bottom: 10px;
+}
+
+.frame .frame_1 .frame_1_1 img {
+    float: left;
+    margin-right: 10px;
+}
+
+.frame .min {
+    width: 162px;
+    height: 162px;
+    margin-right: 11px;
+    float: left;
+}
+
+.frame .max {
+    width: 333px;
+    height: 162px;
+    margin-right: 11px;
+    float: left;
+}
+
+.frame h1 {
+    text-align: center;
+    width: 900px;
+    margin-top: 40px;
+    font-size: 50px;
+    color: #ffffff;
+}
+
+.info {
+    width: 900px;
+    margin: 0px auto;
+    text-align: center;
+    padding-top: 80px;
+    background-color: #003547;
+}
+
+.content {
+    padding: 20px;
+    widows: 900px;
+    line-height: 30px;
+    text-indent: 2em;
+    text-align: left;
+    color: #ffffff;
+}
