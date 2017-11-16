@@ -12,7 +12,7 @@ urlpatterns=[
 	# url(r'^logout/$', views.logoutt, name='logout'),
 	url(r'^logout-then-login/$', auth_views.logout_then_login, name='logout_then_login'),
 	# change password
-	url(r'^password-change/$', auth_views.password_change, name='password_change'),
+	url(r'^password-change/$', auth_views.password_change, {'template_name': 'registration/password_form.html'},name='password_change'),
 	url(r'^password-change/done/$', auth_views.password_change_done, name='password_change_done'),
 	# reset password
 	## restore password urls

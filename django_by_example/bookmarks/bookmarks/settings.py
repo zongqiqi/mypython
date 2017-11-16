@@ -128,8 +128,17 @@ STATIC_URL = '/static/'
 
 from django.core.urlresolvers import reverse_lazy
 LOGIN_REDIRECT_URL=reverse_lazy('dashboard')#用户登录成功后咩有获取到‘next’后会被默认重定向到的地址
-LOGIN_URL=reverse_lazy('login')#重定向用户登录的地址
+# LOGIN_URL=reverse_lazy('login')#重定向用户登录的地址
 LOGIN_URL=reverse_lazy('logout')#重定向登出的地址
 
 # LOGOUT_REDIRECT_URL=reverse_lazy('login')#next_page: The URL to redirect to 
 ##after logout. Defaults to settings.LOGOUT_REDIRECT_URL if not supplied.
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+EMAIL_HOST = 'smtp.qq.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = '544136329@qq.com' # 你的 QQ 账号
+EMAIL_HOST_PASSWORD = 'ryvpvvuqenybbbcf'
+EMAIL_USE_TLS = True
+EMAIL_FROM = '544136329@qq.com' # 你的 QQ 账号

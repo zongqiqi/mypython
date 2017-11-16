@@ -35,7 +35,7 @@ class Cart(objects):
 #update_quantity：这是一个布尔值，它表示数量是否需要按照给定的数量参数更新（True），不然新的数量必须要被加进已存在的数量中（False）
 	def save(self):
 		#update the session cart
-		self.session[settings.CART_SESSION_ID]=self.cart
+		self.session[settings.CART_SESSION_ID]=self.cart#把购物车数据同步到会话
 		#mark the session as 'modified' to make sure it is saved
 		self.session.modified=True
 		# session.modified = True 标记改动了的会话。这是为了告诉 Django 会话已经被改动，需要将它保存起来。
@@ -43,7 +43,7 @@ class Cart(objects):
 		"""
 		remove a product from the cart
 		"""
-		product_id=product.id
+		product_id=str(product.id)
 		if product_id in self.cart:
 			del self.cart[product_id]
 			self.save()
@@ -51,9 +51,9 @@ class Cart(objects):
 		"""
 		Iterate over the items in the cart and get the product from the database
 		"""
-		product_ids=self.cart.keys()
+		product_ids=self.cart.keys()#获取购物车中的商品ID
 		#get the product objects and add them  to the cart
-		products=Product.objects.filter(id__in=product_ids)
+		products=Product.objects.filter(id__in=product_ids)#由商品ID获取product对象
 		for product in products:
 			self.cart[str(product.id)]['product']=product
 		for item in self.cart.values():
@@ -65,3 +65,10 @@ class Cart(objects):
 		Count all items in cart
 		"""
 		return sum(item[quantity] for item in self.cart.values())
+
+	def clear(self):
+		"""
+		remove cart from the session
+		"""
+		del self.session[settings.CART_SESSION_ID]
+		self.session.modified=True
