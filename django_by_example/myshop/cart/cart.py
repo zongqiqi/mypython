@@ -2,7 +2,7 @@ from decimal import Decimal
 from django.conf import settings
 from shop.models import Product
 
-class Cart(objects):
+class Cart(object):
 	def __init__(self,request):
 		"""
 		Initialize the cart.
@@ -11,7 +11,7 @@ class Cart(objects):
 		cart=self.session.get(settings.CART_SESSION_ID)
 		if not cart:
 			# save the empty cart in session
-			cart=self.session[self.CART_SESSION_ID]={}
+			cart=self.session[settings.CART_SESSION_ID]={}
 		self.cart=cart
 #这个cart类用于管理购物车，把一个购物车一同初始化，使用self.session=request.session保存当前对话以便其对cart的其他方法使用，
 #首先尝试self.session.get(settings.CART_SESSION_ID)尝试从当前会话中获取购物车，如果当前会话中没有购物车就在会话中设置一个空字典，
@@ -22,8 +22,7 @@ class Cart(objects):
 		"""
 		product_id = str(product.id)# Django 使用 JSON 来序列化会话数据，而 JSON 又只接受字符串的键名
 		if product_id not in self.cart:
-			self.cart[product_id]={'quantity':0,
-									'price':str(product.price)}
+			self.cart[product_id]={'quantity':0,'price':str(product.price)}
 		if update_quantity:
 			self.cart[product_id]['quantity']=quantity
 		else:
@@ -39,7 +38,7 @@ class Cart(objects):
 		#mark the session as 'modified' to make sure it is saved
 		self.session.modified=True
 		# session.modified = True 标记改动了的会话。这是为了告诉 Django 会话已经被改动，需要将它保存起来。
-	def remove(self):
+	def remove(self,product):
 		"""
 		remove a product from the cart
 		"""
@@ -64,7 +63,10 @@ class Cart(objects):
 		"""
 		Count all items in cart
 		"""
-		return sum(item[quantity] for item in self.cart.values())
+		return sum(item['quantity'] for item in self.cart.values())
+
+	def get_total_price(self):
+		return sum(Decimal(item['price']) * item['quantity'] for item in self.cart.values())
 
 	def clear(self):
 		"""
