@@ -1,7 +1,7 @@
 from django.db import models
 from shop.models import Product
 
-
+#订单模型，用户信息
 class Order(models.Model):
 	first_name=models.CharField(max_length=50)
 	last_name=models.CharField(max_length=50)

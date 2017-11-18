@@ -27,7 +27,7 @@ class Cart(object):
 			self.cart[product_id]['quantity']=quantity
 		else:
 			self.cart[product_id]['quantity']+=quantity
-		self.save
+		self.save()
 #add() 函数接受以下参数
 #product：需要在购物车中更新或者向购物车添加的 Product 对象
 #quantity：一个产品数量的可选参数。默认为 1
