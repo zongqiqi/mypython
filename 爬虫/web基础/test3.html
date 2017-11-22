@@ -1,0 +1,69 @@
+<!-- CSS基础 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Python CSS前端基础</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		h1 {
+			background-color: # 6495ed;/*背景颜色*/
+			color: red;/*字体颜色*/
+			text-align: center;/*文本居中*/
+			font-size: 40 px;
+		}
+		p {
+			background-color: e0ffff;
+			text-indent: 50px;/*首行缩进*/
+			font-family: "Times New Roman",Times,serif;/*设置字体*/
+		}
+		p.ex {color: rgb(0,0,255);}
+		div {background-color: # b0c4de;}
+		ul.a {list-style-type: square;}/*square实心方块;decimal数字；decimal-leading-zero，0开头的数字标记；*/
+		ol.b {list-style-type: upper-roman;}/*大写罗马数字*/
+		ul.c {list-style-image: url('./image/img.png');}/*url('http://www.cnblogs.com/images/logo_small.gif')*/
+	</style>
+</head>
+<body>
+	<h1>CSS background-color演示</h1>
+	<div>
+		该文本插入在div元素中
+		<p>该段落有自己的颜色</p>
+		<p class="ex">这是一个类为“ex”的段落</p>
+	</div>
+	<p>无序列表实例</p>
+	<ul class="a">
+		<li>Coffee</li>
+		<li>Tea</li>
+		<li>Milk</li>
+	</ul>
+	<p>有序列表</p>
+	<ol class="b">
+		<li>Coffee</li>
+		<li>Tea</li>
+		<li>Milk</li>
+	</ol>
+	<p>图片列表示例</p>
+	<ul class="c">
+		<li>Coffee</li>
+		<li>Tea</li>
+		<li>Milk</li>
+	</ul>
+</body>
+</html>
+
+
+
+ID选择器：#word {text-align:center;color:red;}  ID为word的元素设置为居中，红色
+class选择器： p.center {text-align:center} 对所有class=center的p元素设置为文本居中
+
+字体属性：
+	font-size:定义字体大小，font-size:14;
+	font-family:定义字体，如：font-family:微软雅黑,serif;字体之间使用","隔开，确保字体不存在的时候室友下一个字体
+	font-weight:定义字体加粗，normal(默认)，bold（加粗），bolder（更粗），lighter（更细）
+	
+背景属性：
+	background-color:定义背景的颜色
+	background-image:定义背景图片，如：backgroud-image:url
+	background-repeat:定义背景重复方式，取值为repeat：整体重复平铺；repeat-x：水平方向平铺；repeat-y：垂直方向平铺，
+						取值为 no-repeat，表示不重复
+	background-position:定义背景位置，横向上：left、center、right，纵向上：top、center、bottom
