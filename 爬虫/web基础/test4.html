@@ -1,7 +1,7 @@
 <!-- javascript -->
 <!-- JavaScript代码，有直接引用和导入js文件两种做法 -->
 <!-- 1、直接插入代码。在<script></script>标记中编写代码，可以嵌在网页的任何部分，通常在<head> -->
-		<!-- 示例1： -->
+		示例1：
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +10,71 @@
 	</script>
 </head>
 <body>
-	Python 前段学习
+	Python 前端学习
 </body>
 </html>
+
+<!-- JavaScript的基本语法：
+	1、Javascript严格区分大小写，会忽略关键字、变量名、数字、函数名、或者其他各种元素之间的空格，制表符和换行符，
+		var x=1;以';'结尾
+		判断结构：
+			var x=2;y=1;
+			if (x>y) {
+				x=3;
+				y=2
+			}
+
+		注释：单行使用'//'作为注释符；多行使用'/*内容*/'
+	2、数据类型和变量
+		Number：Javascript中的数字统一使用Number表示，包括：整数、浮点数、科学计数、负数、十六进制数、无法计算(NaN)和无限大(Infinity)
+		字符串类型：以单引号或者双引号括起来的任意文本。
+		布尔值类型：true，false
+		数组类型：一组按顺序排列的集合，例如:var array =[1,2,3.13,'hello',null,true]或者：var array=new Array(1,2,3)
+					数组元素通过索引来访问，索引的起始值为0
+		对象类型：Javascript的对象是一组由键-值组成的无序集合，类似Python的字典，
+					例如：var person ={name:'zongqiqi',age:'77',tags:['python','learning'],city:'anhui'}
+					获取对象的属性：person.name(对象变量：属性名)
+		JavaScript是弱类型的编程语言，声明变量的时候都使用了关键字var,为变量赋值的时候会自动判断类型并进行转换，
+					变量名都是大小写英文，、数字、美元号、下划线的组合，不能使用数字开头，也不能是JAvascript关键字
+	3、运算符和操作符
+		算数操作符：+、-、*、/、%（取模）
+		字符串操作符：+（字符串连接）、+=（字符串连接复合）
+		布尔操作符：！（非），&&（与）、||（或）
+		一元操作符：++（自增）、--（自减）、+（一元加）、-（一元减）
+		关系比较符：<、<=、>、>=、!=、==、===、!==、
+		按位操作符：~（按位非）、&（按位与）、|（按位或）、^（按位异或）、<<（左移）、>>（右移）、>>>（无符号右移）
+	4、条件判断
+		JavaScript使用if(){...}else{...}来进行条件判断
+		var role=20;
+		if (age>=18){
+			alert('adult');
+		}else{
+			alert('teenager');
+		}
+	5、循环
+		两种循环：一种是for循环，一种是while循环
+		计算1-100相加之和
+			var x=0;
+			var i;
+			for (i=1;i<=100;i++){
+				x=x+i;
+				}
+		for 循环变体：for...in...,它可以把一个对象的所有属性一次遍历出来
+			var person={
+				name:'zongqiqi',
+				age:20,
+				city:'Shanghai',
+				};
+			for (var key in person){
+				alter(key);//'name','age','city'
+				}
+		while(){...}和do{...}while()
+	6、函数
+		在JavaScript中定义函数使用function关键值：
+			function add(x,y){
+				return x+y
+			}
+			function指出这是一个函数定义
+			add是函数的名称
+			(x,y)括号内列出的是函数的参数，多个参数以','隔开
+			{...}之间的代码是函数体，包含若干语句 -->

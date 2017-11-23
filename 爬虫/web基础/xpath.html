@@ -1,0 +1,32 @@
+<classroom>
+	<student>
+		<id>001</id>
+		<name lang='en'>marry</name>
+		<age>20</age>
+		<country>China</country>
+	</student>
+</classroom>
+
+
+<!-- 包含元素：
+	<classroom>(文档结点)、<id>(元素结点)、lang='en'(属性结点)、marry(文本)
+	结点关系：
+		父：上一级结点
+		子：下一级结点
+		同胞：有相同的父节点
+		先辈：父的父
+		后代：子的子
+	路径表达式：
+		nodename:选取此节点的所有节点
+		/：从根节点选取
+		//：选择任意位置的某个节点
+		.：选取当前结点
+		..：选取当前结点的父节点
+		@:选取属性
+	节点选取：
+		classroom:选取classroom元素的所有子节点
+		/classroom:选取根元素classroom
+		classroom/student:选取属于classroom的子元素的所有student元素
+		//student:选取所有student子元素，不管他们在文档中的位置
+		classroom//student：选取属于classroom的子元素所有student元素，不管他在classroom之下的什么位置
+		//@lang：选取名为lang的所有属性 -->
