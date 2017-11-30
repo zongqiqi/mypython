@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)file:///E:/zongqiqi/biandaima/mypython/test/BaiduMap/map2.html -->
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="initial-scale=1.0, user-scalable=no" name="viewport">
+        <title>
+            宗晓七的开心旅途
+        </title>
+        <style type="text/css">
+            html{height:100%}  
+            body{height:100%;margin:0px;padding:0px}  
+            #container{height:100%}
+        </style>
+        <script src="http://api.map.baidu.com/api?v=2.0&ak=wuLzvFIFbTwR38UbVj312ZOUWnVh31BH" type="text/javascript">
+        </script>
+        <body>
+            <div id="container">
+            </div>
+        </body>
+        <script type="text/javascript">
+            var map = new BMap.Map("container");// 创建地图实例  
+		    var point = new BMap.Point(121.497, 31.322);//point：上海// 创建点坐标
+		    map.centerAndZoom(point, 13);// 初始化地图，设置中心点坐标和地图级别
+		    map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
+		    
+		    map.addControl(new BMap.NavigationControl());//添加一个平移缩放控件、一个比例尺控件和一个缩略图控件  
+		    map.addControl(new BMap.ScaleControl());    
+		    map.addControl(new BMap.OverviewMapControl());    
+		    map.addControl(new BMap.MapTypeControl());    
+		    map.setCurrentCity("上海"); // 仅当设置城市信息时，MapTypeControl的切换功能才能可用
+
+		    map.setMapStyle({style:'pink'});//個性化設置，粉红色
+		    
+		    // var point1 = new BMap.Point(116.404, 39.915);  //输入坐标   
+		    // var marker = new BMap.Marker(point1);        // 创建标注    
+		    // map.addOverlay(marker);                      //注册标注
+
+		    // var point1=new BMap.Point(121.496949,31.245473);//外滩观光隧道(浦西)
+		    // var point2=new BMap.Point(121.50356,31.244494);//上海3D魔幻趣味馆
+		    // var point3=new BMap.Point(121.485869,31.234322);//上海大世界
+		    // var point4=new BMap.Point(121.515786,31.335778);//立秀宝儿童社会体验英语小镇
+		    // var point5=new BMap.Point(121.400715,31.229609);//成龙电影艺术馆
+		    // var point6=new BMap.Point(121.359616,31.443017);//闻道园
+		    // var point7=new BMap.Point(121.482079,31.241448);//BUSTOUR上海观光游
+		    // var point8=new BMap.Point(121.947303,30.903652);//滴水湖景区（游船票）
+		    // var point9=new BMap.Point(121.596505,30.869181);//上海都市菜园
+		    // var point10=new BMap.Point(121.020855,30.890015);//枫泾古镇
+		    // var point11=new BMap.Point(121.021866,30.927123);//中国农民画村
+		    // var point12=new BMap.Point(121.503405,31.345952);//中国工业设计博物馆
+		    // var point13=new BMap.Point(121.50387,31.346334);//上海陶瓷科技艺术馆
+		    // var point14=new BMap.Point(121.699585,31.169652);//上海游龙石文化科普馆
+		    // var point15=new BMap.Point(121.337776,31.818204);//瑞华果园
+		    // var point16=new BMap.Point(121.917395,30.969511);//滨海森林公园
+		    // var point17=new BMap.Point(121.463043,31.199983);//上海昆虫博物馆
+		    // var point18=new BMap.Point(121.509878,31.189927);//上海交运巴士房车俱乐部
+
+		    pointArr=[
+		            { title: "外滩观光隧道(浦西) ", point: "121.496949,31.245473", address: "  ", tel: "  " },
+		            { title: "上海3D魔幻趣味馆 ", point: "121.50356,31.244494", address: "  ", tel: "  " },
+		            { title: "上海大世界 ", point: "121.485869,31.234322", address: "  ", tel: "  " },
+		            { title: "立秀宝儿童社会体验英语小镇 ", point: "121.515786,31.335778", address: "  ", tel: "  " },
+		            { title: "成龙电影艺术馆 ", point: "121.400715,31.229609", address: "  ", tel: "  " },
+		            { title: "闻道园 ", point: "121.359616,31.443017", address: "  ", tel: "  " },
+		            { title: "BUSTOUR上海观光游 ", point: "121.482079,31.241448", address: "  ", tel: "  " },
+		            { title: "滴水湖景区 ", point: "121.947303,30.903652", address: "  ", tel: "  " },
+		            { title: "上海都市菜园 ", point: "121.596505,30.869181", address: "  ", tel: "  " },
+		            { title: "枫泾古镇 ", point: "121.020855,30.890015", address: "  ", tel: "  " },
+		            { title: "中国农民画村 ", point: "121.021866,30.927123", address: "  ", tel: "  " },
+		            { title: "中国工业设计博物馆 ", point: "121.503405,31.345952", address: "  ", tel: "  " },
+		            { title: "上海陶瓷科技艺术馆 ", point: "121.50387,31.346334", address: "  ", tel: "  " },
+		            { title: "瑞华果园 ", point: "121.337776,31.818204", address: "  ", tel: "  " },
+		            { title: "滨海森林公园 ", point: " 121.917395,30.969511 ", address: "  ", tel: "  " },
+		            { title: "上海昆虫博物馆 ", point: "121.463043,31.199983", address: "  ", tel: "  " },
+		            { title: "上海交运巴士房车俱乐部 ", point: "121.509878,31.189927", address: "  ", tel: "  " },
+		        ]
+
+
+	    	var opts = {
+				  position : point,    // 指定文本标注所在的地理位置
+				  offset   : new BMap.Size(30, -30)    //设置文本偏移量
+				}
+
+		    var point = new Array();
+		    var marker=new Array();
+		    var info = new Array();
+		    for (var i = 0; i < pointArr.length; i++) {
+		        var p0=pointArr[i].point.split(",")[0];
+		        var p1=pointArr[i].point.split(",")[1];
+		        point[i]=new BMap.Point(p0,p1);
+		        marker[i] = new window.BMap.Marker(point[i]); 
+		        map.addOverlay(marker[i]);
+		        marker[i].setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+
+		        var label = new BMap.Label(pointArr[i].title,{offset:new BMap.Size(20,-10)});
+				marker[i].setLabel(label);
+		    	}
+
+
+                </script>
+            </meta>
+        </meta>
+    </head>
+</html>
