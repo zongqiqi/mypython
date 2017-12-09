@@ -1,0 +1,1 @@
+@"e:\zongqiqi\biandaima\mypython\djrestframework\venv\scripts\python3.exe" "e:\zongqiqi\biandaima\mypython\djrestframework\venv\Scripts\markdown_py" %*
